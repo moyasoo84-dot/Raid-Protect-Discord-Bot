@@ -1,24 +1,17 @@
-import discord
-import re 
-from Tools.utils import getConfig, updateConfig, getGuildPrefix
-from discord.ext import commands
+ools.utils
 
-# ------------------------ COGS ------------------------ #  
-
-class AllowSpamCog(commands.Cog, name="allow spam command"):
-    def __init__(self, bot):
-        self.bot = bot
+# ------------------------ COGS ------------------------ #
 
 # ------------------------------------------------------ #  
 
-    @commands.command(name = 'allowspam', 
+    @commands.command(name 
                         aliases= ["spam"],
                         usage="<#channel/ID> (False)",
-                        description="Enable or disable the spam protection in a specific channel.")
+                        description="Enable or disab.")
     @commands.has_permissions(administrator = True)
-    @commands.cooldown(1, 3, commands.BucketType.member)
+    @commands.cooldown(1, 3, c.r)
     @commands.guild_only()
-    async def allowspam(self, ctx, channel, remove=""):
+    async def allowspam(sel"):
 
         channel = re.findall(r'\d+', channel)[0] # Get only numbers from channel
         remove = remove.lower()
@@ -73,7 +66,4 @@ class AllowSpamCog(commands.Cog, name="allow spam command"):
                 embed.set_footer(text=self.bot.translate.msg(ctx.guild.id, "global", "BOT_CREATOR"))
                 return await ctx.channel.send(embed=embed)
 
-# ------------------------ BOT ------------------------ #  
-
-def setup(bot):
-    bot.add_cog(AllowSpamCog(bot))
+# ------------------------ BOT ------------------------)
