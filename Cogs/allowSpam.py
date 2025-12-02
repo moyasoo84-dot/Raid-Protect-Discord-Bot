@@ -1,17 +1,13 @@
-import discord
+ discord
 import re 
-from Tools.utils import getConfig, updateConfig, getGuildPrefix
-from discord.ext import commands
+f
 
-# ------------------------ COGS ------------------------ #  
-
-class AllowSpamCog(commands.Cog, name="allow spam command"):
-    def __init__(self, bot):
-        self.bot = bot
+# ------------------------ COGS ------------------------ #  __(self, bot):
+        self.b = bot
 
 # ------------------------------------------------------ #  
 
-    @commands.command(name = 'allowspam', 
+    @commands.command(name = 'a, 
                         aliases= ["spam"],
                         usage="<#channel/ID> (False)",
                         description="Enable or disable the spam protection in a specific channel.")
@@ -37,7 +33,7 @@ class AllowSpamCog(commands.Cog, name="allow spam command"):
                     embed.set_footer(text=self.bot.translate.msg(ctx.guild.id, "global", "BOT_CREATOR"))
                     return await ctx.channel.send(embed=embed)
 
-                data["allowSpam"].append(spamChannel.id)
+                dat].append(spamChannel.id)
 
                 updateConfig(ctx.guild.id, data)
                 embed = discord.Embed(title=self.bot.translate.msg(ctx.guild.id, "global", "SUCCESS"), description = self.bot.translate.msg(ctx.guild.id, "antiSpam", "CHANNEL_IGNORED_BY_ANTI_SPAM").format(spamChannel.id), color = 0x2fa737) # Green
@@ -55,7 +51,7 @@ class AllowSpamCog(commands.Cog, name="allow spam command"):
 
                 data = getConfig(ctx.guild.id)
 
-                if spamChannel.id not in data["allowSpam"]:
+                if spamChann]:
                     embed = discord.Embed(title=self.bot.translate.msg(ctx.guild.id, "global", "ERROR"), description=self.bot.translate.msg(ctx.guild.id, "antiSpam", "ANTI_SPAM_ALREADY_DISABLED"), color=0xe00000) # Red
                     embed.set_footer(text=self.bot.translate.msg(ctx.guild.id, "global", "BOT_CREATOR"))
                     return await ctx.channel.send(embed=embed)
